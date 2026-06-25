@@ -9,27 +9,27 @@ export default function TechStack() {
     {
       title: "FRONTEND DEVELOPMENT",
       icon: <Cpu className="text-brand-red" size={24} />,
-      skills: ["HTML5", "CSS3", "JavaScript", "React.js", "Tailwind CSS"],
+      skills: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React.js", "Next.js 15", "Tailwind CSS", "Framer Motion"],
     },
     {
       title: "BACKEND ARCHITECTURE",
       icon: <Server className="text-brand-red" size={24} />,
-      skills: ["Node.js", "Express.js", "REST APIs"],
+      skills: ["Node.js", "Express.js", "REST APIs", "JWT Auth", "Mongoose", "Socket.io"],
     },
     {
       title: "DATABASE MANAGEMENT",
       icon: <Database className="text-brand-red" size={24} />,
-      skills: ["MySQL", "MongoDB"],
+      skills: ["MySQL", "MongoDB", "PostgreSQL", "Redis"],
     },
     {
       title: "DEVELOPER TOOLS",
       icon: <Wrench className="text-brand-red" size={24} />,
-      skills: ["Git", "GitHub", "VS Code", "Postman"],
+      skills: ["Git", "GitHub", "VS Code", "Postman", "npm / pnpm", "Docker", "Figma"],
     },
     {
       title: "DEPLOYMENT & HOSTING",
       icon: <Globe className="text-brand-red" size={24} />,
-      skills: ["Vercel", "Netlify", "Render"],
+      skills: ["Vercel", "Netlify", "Render", "AWS S3", "GitHub Pages"],
     },
   ];
 

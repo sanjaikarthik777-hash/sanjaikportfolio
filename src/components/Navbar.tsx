@@ -8,6 +8,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [hoveredTab, setHoveredTab] = useState<string | null>(null);
 
   const navItems = [
     { label: "HOME", target: "home" },
@@ -18,10 +19,10 @@ export default function Navbar() {
     { label: "CONTACT", target: "contact" },
   ];
 
-  // Track window scroll to add background blur/shadow
+  // Track window scroll to add background blur/shadow modifications
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 30);
 
       // Section spy to highlight active menu item
       const sections = ["home", "about", "skills", "projects", "education", "contact"];
@@ -55,71 +56,87 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          scrolled ? "py-4 bg-bg-solid/80 backdrop-blur-md border-b border-brand-border" : "py-6 bg-transparent"
+        className={`fixed left-1/2 -translate-x-1/2 z-40 w-[95%] max-w-5xl transition-all duration-300 ${
+          scrolled ? "top-4" : "top-6"
         }`}
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1 }}
+        initial={{ y: -100, opacity: 0, x: "-50%" }}
+        animate={{ y: 0, opacity: 1, x: "-50%" }}
+        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+        {/* Liquid Glass Capsule Container */}
+        <div 
+          className={`w-full px-6 py-2.5 rounded-full border border-white/10 bg-[#0D0D0D]/40 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.65)] flex justify-between items-center relative overflow-hidden transition-all duration-300 ${
+            scrolled ? "py-2 bg-[#0D0D0D]/60 border-white/15" : ""
+          }`}
+        >
           {/* Logo / Brand Name */}
           <button
             onClick={() => scrollToSection("home")}
-            className="group relative flex items-center gap-1.5 focus:outline-none"
+            className="group relative flex items-center gap-1.5 focus:outline-none z-10 pl-2"
           >
-            <span className="font-bebas text-2xl md:text-3xl font-bold tracking-wider text-text-white transition-colors duration-300 group-hover:text-brand-red">
+            <span className="font-bebas text-2xl font-bold tracking-wider text-text-white transition-colors duration-300 group-hover:text-brand-red">
               SANJAI K
             </span>
             <span className="h-1.5 w-1.5 rounded-full bg-brand-red animate-pulse" />
           </button>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-1 relative z-10">
             {navItems.map((item) => (
               <button
                 key={item.target}
                 onClick={() => scrollToSection(item.target)}
-                className="group relative py-1 focus:outline-none"
+                onMouseEnter={() => setHoveredTab(item.target)}
+                onMouseLeave={() => setHoveredTab(null)}
+                className="group relative px-4 py-2 focus:outline-none rounded-full"
               >
                 <span
-                  className={`font-sans text-xs tracking-[0.2em] font-semibold transition-colors duration-300 ${
-                    activeSection === item.target ? "text-brand-red" : "text-text-gray group-hover:text-text-white"
+                  className={`font-sans text-[10px] tracking-[0.2em] font-bold transition-colors duration-300 relative z-10 ${
+                    activeSection === item.target ? "text-brand-red" : "text-text-gray group-hover:text-white"
                   }`}
                 >
                   {item.label}
                 </span>
-                {/* Underline indicators */}
+
+                {/* Sliding Liquid Glass Capsule Hover Highlight */}
+                {hoveredTab === item.target && (
+                  <motion.div
+                    className="absolute inset-0 bg-white/5 border border-white/5 rounded-full z-0 shadow-inner"
+                    layoutId="navbarHoverPill"
+                    transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                  />
+                )}
+
+                {/* Active Section indicator bar */}
                 {activeSection === item.target && (
-                  <motion.span
-                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-red"
-                    layoutId="activeNavIndicator"
+                  <motion.div
+                    className="absolute bottom-0.5 left-1/2 -translate-x-1/2 h-[2.5px] w-5 rounded-full bg-brand-red z-10"
+                    layoutId="navbarActiveBar"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-red scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
               </button>
             ))}
           </nav>
 
           {/* Action Button - Let's Talk */}
-          <div className="hidden md:block">
+          <div className="hidden md:block z-10 pr-2">
             <button
               onClick={() => scrollToSection("contact")}
-              className="relative px-5 py-2.5 overflow-hidden group border border-brand-red bg-transparent font-sans text-xs tracking-widest font-semibold hover:text-white transition-all duration-300"
+              className="relative px-6 py-2 overflow-hidden group border border-brand-red bg-transparent font-sans text-[10px] tracking-[0.2em] font-bold text-white rounded-full transition-all duration-300"
             >
               <span className="absolute inset-0 w-full h-full bg-brand-red -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-0" />
-              <span className="relative z-10">HIRE ME</span>
+              <span className="relative z-10 group-hover:text-white transition-colors duration-300">HIRE ME</span>
             </button>
           </div>
 
           {/* Mobile Menu Icon */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="md:hidden p-2 text-text-white focus:outline-none hover:text-brand-red transition-colors duration-300"
+            className="md:hidden p-2 text-text-white focus:outline-none hover:text-brand-red transition-colors duration-300 z-10"
             aria-label="Open Menu"
           >
-            <Menu size={24} />
+            <Menu size={20} />
           </button>
         </div>
       </motion.header>
@@ -128,7 +145,7 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 z-50 bg-bg-solid flex flex-col justify-between p-8"
+            className="fixed inset-0 z-50 bg-[#0D0D0D] flex flex-col justify-between p-8"
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
@@ -144,7 +161,7 @@ export default function Navbar() {
                 className="p-2 text-text-white hover:text-brand-red transition-colors duration-300"
                 aria-label="Close Menu"
               >
-                <X size={24} />
+                <X size={22} />
               </button>
             </div>
 

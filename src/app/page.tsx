@@ -12,6 +12,7 @@ import Education from "@/components/Education";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import CinematicBackground from "@/components/CinematicBackground";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
@@ -39,6 +40,12 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="relative min-h-screen bg-bg-solid text-text-white overflow-hidden selection:bg-brand-red selection:text-white"
           >
+            {/* Cinematic Animated Background */}
+            <CinematicBackground />
+
+            {/* Film-grain noise overlay for cinematic depth */}
+            <div className="noise-overlay" aria-hidden="true" />
+
             {/* Custom Mouse Tracker */}
             <CustomCursor />
 

@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { useEffect, useRef, useState, useCallback } from "react";
-import { Github, Linkedin, Mail, ArrowDown, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Mail, Instagram, ArrowDown, ArrowRight } from "lucide-react";
 
 // Floating particle component
 function Particle({ x, y, size, delay, duration }: { x: string; y: string; size: number; delay: number; duration: number }) {
@@ -349,6 +349,15 @@ export default function Hero() {
             whileHover={{ scale: 1.15, y: -2 }}
           >
             <Mail size={20} />
+          </motion.a>
+          <motion.a
+            href="https://www.instagram.com/viv_sanjai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-text-gray hover:text-electric-blue transition-colors duration-300"
+            whileHover={{ scale: 1.15, y: -2 }}
+          >
+            <Instagram size={20} />
           </motion.a>
         </div>
 

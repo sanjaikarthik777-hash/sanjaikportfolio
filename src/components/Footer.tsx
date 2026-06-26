@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUp, Heart } from "lucide-react";
+import { ArrowUp, Heart, Github, Linkedin, Mail, Instagram } from "lucide-react";
 
 export default function Footer() {
   const scrollElements = Array(8).fill("SANJAI K • FULL STACK DEVELOPER • ");
@@ -60,6 +60,32 @@ export default function Footer() {
             <p className="font-sans text-xs md:text-sm text-text-gray max-w-sm leading-relaxed">
               Engineering high-performance client interfaces and backend architectures. Aspiring software engineer translating concepts into enterprise systems.
             </p>
+            {/* Social icons */}
+            <div className="flex gap-4 items-center mt-2">
+              <motion.a
+                href="https://github.com/sanjaikarthik777-hash"
+                target="_blank" rel="noopener noreferrer"
+                className="text-text-gray hover:text-electric-blue transition-colors duration-300"
+                whileHover={{ scale: 1.2, y: -2 }}
+              ><Github size={17} /></motion.a>
+              <motion.a
+                href="https://www.linkedin.com/in/sanjai-k-92a133345"
+                target="_blank" rel="noopener noreferrer"
+                className="text-text-gray hover:text-electric-blue transition-colors duration-300"
+                whileHover={{ scale: 1.2, y: -2 }}
+              ><Linkedin size={17} /></motion.a>
+              <motion.a
+                href="https://www.instagram.com/viv_sanjai"
+                target="_blank" rel="noopener noreferrer"
+                className="text-text-gray hover:text-electric-blue transition-colors duration-300"
+                whileHover={{ scale: 1.2, y: -2 }}
+              ><Instagram size={17} /></motion.a>
+              <motion.a
+                href="mailto:sanjaikarthik777@gmail.com"
+                className="text-text-gray hover:text-electric-blue transition-colors duration-300"
+                whileHover={{ scale: 1.2, y: -2 }}
+              ><Mail size={17} /></motion.a>
+            </div>
           </div>
 
           {/* Navigation Links Column (col-span-4) */}

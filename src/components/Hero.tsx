@@ -189,18 +189,36 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Mobile portrait — shown only on mobile as a decorative element */}
-      <div className="md:hidden absolute top-20 right-0 w-32 h-40 sm:w-44 sm:h-56 z-0 opacity-30 pointer-events-none overflow-hidden"
-        style={{ borderRadius: '0 0 0 16px', borderLeft: '1px solid rgba(59,130,246,0.2)', borderBottom: '1px solid rgba(59,130,246,0.2)' }}
+      {/* Mobile portrait — shown only on mobile as a properly visible photo card */}
+      <div
+        className="md:hidden absolute top-20 right-0 w-36 h-48 sm:w-48 sm:h-64 z-10 pointer-events-none overflow-hidden"
+        style={{
+          borderRadius: '0 0 0 20px',
+          border: '1px solid rgba(59,130,246,0.4)',
+          borderRight: 'none',
+          borderTop: 'none',
+          boxShadow: '0 0 30px rgba(37,99,235,0.3), -4px 4px 20px rgba(0,0,0,0.5)',
+        }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/port front.jpeg"
           alt=""
           aria-hidden="true"
-          className="w-full h-full object-cover object-top grayscale"
+          className="w-full h-full object-cover object-top brightness-110 contrast-105"
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(8,11,18,0.5) 0%, transparent 60%), linear-gradient(to top, rgba(8,11,18,0.6) 0%, transparent 50%)' }} />
+        {/* Subtle left-side fade only — keeps text readable, photo stays bright */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to right, rgba(8,11,18,0.55) 0%, transparent 45%)' }}
+        />
+        {/* Editorial label */}
+        <div
+          className="absolute bottom-2 right-2 font-mono text-[7px] tracking-widest text-electric-blue"
+          style={{ textShadow: '0 0 8px rgba(59,130,246,0.8)' }}
+        >
+          SANJAI K
+        </div>
       </div>
 
       {/* Hero Content — Left side */}

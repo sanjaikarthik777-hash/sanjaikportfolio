@@ -68,10 +68,10 @@ export default function Navbar() {
             onClick={() => scrollToSection("home")}
             className="group relative flex items-center gap-1.5 focus:outline-none"
           >
-            <span className="font-bebas text-2xl md:text-3xl font-bold tracking-wider text-text-white transition-colors duration-300 group-hover:text-brand-red">
+            <span className="font-bebas text-2xl md:text-3xl font-bold tracking-wider text-text-white transition-colors duration-300 group-hover:text-electric-blue">
               SANJAI K
             </span>
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-red animate-pulse" />
+            <span className="h-1.5 w-1.5 rounded-full bg-electric-blue animate-pulse" />
           </button>
 
           {/* Desktop Navigation Links */}
@@ -83,8 +83,8 @@ export default function Navbar() {
                 className="group relative py-1 focus:outline-none"
               >
                 <span
-                  className={`font-sans text-xs tracking-[0.2em] font-semibold transition-colors duration-300 ${
-                    activeSection === item.target ? "text-brand-red" : "text-text-gray group-hover:text-text-white"
+                  className={`font-space text-xs tracking-[0.15em] font-semibold transition-colors duration-300 ${
+                    activeSection === item.target ? "text-brand-blue blue-glow-text" : "text-text-gray group-hover:text-text-white"
                   }`}
                 >
                   {item.label}
@@ -92,31 +92,33 @@ export default function Navbar() {
                 {/* Underline indicators */}
                 {activeSection === item.target && (
                   <motion.span
-                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-red"
+                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-blue"
                     layoutId="activeNavIndicator"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-red scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-blue scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
               </button>
             ))}
           </nav>
 
           {/* Action Button - Let's Talk */}
           <div className="hidden md:block">
-            <button
+            <motion.button
               onClick={() => scrollToSection("contact")}
-              className="relative px-5 py-2.5 overflow-hidden group border border-brand-red bg-transparent font-sans text-xs tracking-widest font-semibold hover:text-white transition-all duration-300"
+              className="relative px-5 py-2.5 font-manrope font-semibold text-xs tracking-wide text-white rounded-lg overflow-hidden group transition-all duration-300"
+              style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)', boxShadow: '0 4px 15px rgba(37,99,235,0.4)' }}
+              whileHover={{ scale: 1.04, y: -1, boxShadow: '0 8px 25px rgba(37,99,235,0.55)' } as never}
+              whileTap={{ scale: 0.97 } as never}
             >
-              <span className="absolute inset-0 w-full h-full bg-brand-red -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-0" />
-              <span className="relative z-10">HIRE ME</span>
-            </button>
+              HIRE ME
+            </motion.button>
           </div>
 
           {/* Mobile Menu Icon */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="md:hidden p-2 text-text-white focus:outline-none hover:text-brand-red transition-colors duration-300"
+            className="md:hidden p-2 text-text-white focus:outline-none hover:text-electric-blue transition-colors duration-300"
             aria-label="Open Menu"
           >
             <Menu size={24} />
@@ -141,7 +143,7 @@ export default function Navbar() {
               </span>
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-2 text-text-white hover:text-brand-red transition-colors duration-300"
+                className="p-2 text-text-white hover:text-electric-blue transition-colors duration-300"
                 aria-label="Close Menu"
               >
                 <X size={24} />
@@ -154,7 +156,7 @@ export default function Navbar() {
                 <motion.button
                   key={item.target}
                   onClick={() => scrollToSection(item.target)}
-                  className="font-bebas text-5xl font-bold tracking-wide text-left text-outline-white hover:text-brand-red hover:no-underline transition-colors duration-300 py-2 focus:outline-none block"
+                  className="font-bebas text-5xl font-bold tracking-wide text-left text-outline-white hover:text-electric-blue hover:no-underline transition-colors duration-300 py-2 focus:outline-none block"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 * index, duration: 0.3 }}
@@ -168,8 +170,8 @@ export default function Navbar() {
             <div className="flex justify-between items-center text-xs tracking-widest text-text-muted">
               <div>© 2025 SANJAI K</div>
               <div className="flex gap-4">
-                <a href="https://github.com/sanjaikarthik777-hash" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red">GH</a>
-                <a href="https://www.linkedin.com/in/sanjai-k-92a133345?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red">LI</a>
+                <a href="https://github.com/sanjaikarthik777-hash" target="_blank" rel="noopener noreferrer" className="hover:text-electric-blue">GH</a>
+                <a href="https://www.linkedin.com/in/sanjai-k-92a133345?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" className="hover:text-electric-blue">LI</a>
               </div>
             </div>
           </motion.div>

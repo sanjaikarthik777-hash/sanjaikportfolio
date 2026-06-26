@@ -36,7 +36,7 @@ export default function Contact() {
           {/* Left Column: Editorial Typography & Links (lg:col-span-5) */}
           <div className="lg:col-span-5 flex flex-col gap-8">
             <div className="flex flex-col gap-2">
-              <span className="text-xs md:text-sm tracking-[0.4em] text-brand-red font-semibold uppercase">
+              <span className="text-xs md:text-sm tracking-[0.4em] text-brand-blue font-semibold uppercase">
                 GET IN TOUCH
               </span>
               <h2 className="font-anton text-6xl md:text-8xl leading-none text-text-white tracking-tight uppercase">
@@ -51,19 +51,19 @@ export default function Contact() {
             {/* Quick Contact Info */}
             <div className="flex flex-col gap-4 mt-4 font-mono text-xs tracking-wider">
               <div className="flex items-center gap-3">
-                <span className="text-brand-red font-bold">EMAIL:</span>
+                <span className="text-brand-blue font-bold">EMAIL:</span>
                 <a href="mailto:sanjaikarthik777@gmail.com" className="text-text-gray hover:text-white transition-colors duration-300">
                   sanjaikarthik777@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-brand-red font-bold">PHONE:</span>
+                <span className="text-brand-blue font-bold">PHONE:</span>
                 <a href="tel:+919943567691" className="text-text-gray hover:text-white transition-colors duration-300">
                   +91 99435 67691
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-brand-red font-bold">LOC:</span>
+                <span className="text-brand-blue font-bold">LOC:</span>
                 <span className="text-text-gray">Coimbatore, Tamil Nadu, India</span>
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function Contact() {
                 href="https://github.com/sanjaikarthik777-hash"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-bg-charcoal border border-brand-border text-text-gray hover:text-brand-red hover:border-brand-border-glow transition-all duration-300"
+                className="p-3 bg-bg-charcoal border border-brand-border text-text-gray hover:text-electric-blue hover:border-brand-border-glow transition-all duration-300"
                 whileHover={{ y: -4 }}
               >
                 <Github size={18} />
@@ -83,14 +83,14 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/sanjai-k-92a133345?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-bg-charcoal border border-brand-border text-text-gray hover:text-brand-red hover:border-brand-border-glow transition-all duration-300"
+                className="p-3 bg-bg-charcoal border border-brand-border text-text-gray hover:text-electric-blue hover:border-brand-border-glow transition-all duration-300"
                 whileHover={{ y: -4 }}
               >
                 <Linkedin size={18} />
               </motion.a>
               <motion.a
                 href="mailto:sanjaikarthik777@gmail.com"
-                className="p-3 bg-bg-charcoal border border-brand-border text-text-gray hover:text-brand-red hover:border-brand-border-glow transition-all duration-300"
+                className="p-3 bg-bg-charcoal border border-brand-border text-text-gray hover:text-electric-blue hover:border-brand-border-glow transition-all duration-300"
                 whileHover={{ y: -4 }}
               >
                 <Mail size={18} />
@@ -106,8 +106,8 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {/* Glow line inside */}
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-brand-red" />
+            {/* Blue neon line at top */}
+            <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(90deg, #1d4ed8, #3B82F6, #1d4ed8)', boxShadow: '0 0 12px rgba(59,130,246,0.6)' }} />
 
             {submitted ? (
               <motion.div
@@ -116,7 +116,7 @@ export default function Contact() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="p-4 bg-brand-red-glow border border-brand-border-glow text-brand-red rounded-full">
+                <div className="p-4 bg-brand-blue-glow border border-brand-border-glow text-brand-blue rounded-full">
                   <CheckCircle2 size={40} className="animate-bounce" />
                 </div>
                 <h3 className="font-bebas text-3xl text-text-white tracking-wide">
@@ -127,7 +127,7 @@ export default function Contact() {
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-6 px-6 py-3 border border-brand-red text-brand-red hover:bg-brand-red hover:text-white font-mono text-[10px] tracking-widest transition-all duration-300"
+                  className="mt-6 px-6 py-3 border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-mono text-[10px] tracking-widest transition-all duration-300 blue-glow"
                 >
                   SEND ANOTHER MESSAGE
                 </button>
@@ -151,7 +151,7 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-transparent border-b border-brand-border focus:border-brand-red py-2.5 text-sm text-text-white outline-none transition-colors duration-300 font-sans"
+                    className="bg-transparent border-b border-brand-border focus:border-brand-blue py-2.5 text-sm text-text-white outline-none transition-colors duration-300 font-sans"
                     placeholder="Enter your name"
                   />
                 </div>
@@ -167,7 +167,7 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-transparent border-b border-brand-border focus:border-brand-red py-2.5 text-sm text-text-white outline-none transition-colors duration-300 font-sans"
+                    className="bg-transparent border-b border-brand-border focus:border-brand-blue py-2.5 text-sm text-text-white outline-none transition-colors duration-300 font-sans"
                     placeholder="Enter your email address"
                   />
                 </div>
@@ -183,27 +183,27 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="bg-transparent border border-brand-border focus:border-brand-red p-3 text-sm text-text-white outline-none transition-colors duration-300 font-sans resize-none"
+                    className="bg-transparent border border-brand-border focus:border-brand-blue p-3 text-sm text-text-white outline-none transition-colors duration-300 font-sans resize-none"
                     placeholder="Write your message here..."
                   />
                 </div>
 
                 {/* Submit button */}
-                <button
+                <motion.button
                   type="submit"
                   disabled={loading}
-                  className="w-full relative py-4 overflow-hidden group border border-brand-red bg-brand-red font-sans text-xs tracking-[0.2em] font-semibold text-white transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full py-4 font-manrope font-semibold text-sm text-white rounded-lg flex items-center justify-center gap-2 transition-all duration-300"
+                  style={{ background: 'linear-gradient(135deg, #2563EB 0%, #3B82F6 100%)', boxShadow: '0 4px 15px rgba(37,99,235,0.4)' }}
+                  whileHover={{ scale: 1.01, y: -2, boxShadow: '0 8px 25px rgba(37,99,235,0.55)' } as never}
+                  whileTap={{ scale: 0.99 } as never}
                 >
-                  <span className="absolute inset-0 w-full h-full bg-bg-solid -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-0" />
-                  <span className="relative z-10 flex items-center gap-2 group-hover:text-brand-red transition-colors duration-300 uppercase">
-                    {loading ? "SENDING..." : (
-                      <>
-                        <span>SEND MESSAGE</span>
-                        <Send size={12} />
-                      </>
-                    )}
-                  </span>
-                </button>
+                  {loading ? "SENDING..." : (
+                    <>
+                      <span>SEND MESSAGE</span>
+                      <Send size={14} />
+                    </>
+                  )}
+                </motion.button>
 
               </form>
             )}

@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="bg-bg-solid text-text-white min-h-full font-sans antialiased selection:bg-brand-red selection:text-white">
+      <body className="bg-bg-solid text-text-white min-h-full font-sans antialiased selection:bg-brand-blue selection:text-white">
         {children}
       </body>
     </html>

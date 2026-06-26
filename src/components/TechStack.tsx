@@ -8,27 +8,27 @@ export default function TechStack() {
   const stackCategories = [
     {
       title: "FRONTEND DEVELOPMENT",
-      icon: <Cpu className="text-brand-red" size={24} />,
+      icon: <Cpu className="text-brand-blue" size={24} />,
       skills: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React.js", "Next.js 15", "Tailwind CSS", "Framer Motion"],
     },
     {
       title: "BACKEND ARCHITECTURE",
-      icon: <Server className="text-brand-red" size={24} />,
+      icon: <Server className="text-brand-blue" size={24} />,
       skills: ["Node.js", "Express.js", "REST APIs", "JWT Auth", "Mongoose", "Socket.io"],
     },
     {
       title: "DATABASE MANAGEMENT",
-      icon: <Database className="text-brand-red" size={24} />,
+      icon: <Database className="text-brand-blue" size={24} />,
       skills: ["MySQL", "MongoDB", "PostgreSQL", "Redis"],
     },
     {
       title: "DEVELOPER TOOLS",
-      icon: <Wrench className="text-brand-red" size={24} />,
+      icon: <Wrench className="text-brand-blue" size={24} />,
       skills: ["Git", "GitHub", "VS Code", "Postman", "npm / pnpm", "Docker", "Figma"],
     },
     {
       title: "DEPLOYMENT & HOSTING",
-      icon: <Globe className="text-brand-red" size={24} />,
+      icon: <Globe className="text-brand-blue" size={24} />,
       skills: ["Vercel", "Netlify", "Render", "AWS S3", "GitHub Pages"],
     },
   ];
@@ -55,7 +55,7 @@ export default function TechStack() {
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Header */}
         <div className="flex flex-col gap-2 mb-16 md:mb-20">
-          <span className="text-xs md:text-sm tracking-[0.4em] text-brand-red font-semibold uppercase">
+          <span className="text-xs md:text-sm tracking-[0.4em] text-brand-blue font-semibold uppercase">
             TECHNICAL REPERTOIRE
           </span>
           <h2 className="font-anton text-6xl md:text-8xl leading-none text-text-white tracking-tight uppercase">
@@ -78,7 +78,7 @@ export default function TechStack() {
               {/* Top Row - Category Title & Icon */}
               <div className="relative z-10">
                 <div className="flex justify-between items-start mb-6">
-                  <div className="p-3 bg-brand-red-glow border border-brand-border rounded">
+                  <div className="p-3 bg-brand-blue-glow border border-brand-border rounded">
                     {category.icon}
                   </div>
                   <span className="font-mono text-[9px] text-text-muted tracking-[0.2em] font-semibold">
@@ -95,7 +95,7 @@ export default function TechStack() {
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 bg-bg-solid border border-brand-border text-xs text-text-gray font-mono hover:text-brand-red hover:border-brand-border-glow transition-all duration-300"
+                    className="px-3 py-1.5 bg-bg-solid border border-brand-border text-xs text-text-gray font-mono hover:text-brand-blue hover:border-brand-border-glow transition-all duration-300"
                   >
                     {skill}
                   </span>
@@ -103,7 +103,7 @@ export default function TechStack() {
               </div>
 
               {/* Glass subtle light reflection */}
-              <div className="absolute right-0 bottom-0 w-24 h-24 bg-brand-red-glow rounded-full blur-[40px] opacity-20 pointer-events-none" />
+              <div className="absolute right-0 bottom-0 w-24 h-24 bg-brand-blue-glow rounded-full blur-[40px] opacity-20 pointer-events-none" />
             </motion.div>
           ))}
         </div>

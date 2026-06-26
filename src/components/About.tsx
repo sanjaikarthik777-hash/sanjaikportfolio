@@ -5,10 +5,10 @@ import { GraduationCap, Briefcase, Database, Layout } from "lucide-react";
 
 export default function About() {
   const stats = [
-    { label: "Projects Completed", value: "5+", icon: <Briefcase className="text-brand-red" size={20} /> },
-    { label: "Developer Focus", value: "Full Stack", icon: <Layout className="text-brand-red" size={20} /> },
-    { label: "Core Expertise", value: "Frontend & Backend", icon: <Layout className="text-brand-red" size={20} /> },
-    { label: "Storage & APIs", value: "Databases", icon: <Database className="text-brand-red" size={20} /> },
+    { label: "Projects Completed", value: "5+", icon: <Briefcase className="text-brand-blue" size={20} /> },
+    { label: "Developer Focus", value: "Full Stack", icon: <Layout className="text-brand-blue" size={20} /> },
+    { label: "Core Expertise", value: "Frontend & Backend", icon: <Layout className="text-brand-blue" size={20} /> },
+    { label: "Storage & APIs", value: "Databases", icon: <Database className="text-brand-blue" size={20} /> },
   ];
 
   return (
@@ -30,11 +30,17 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            {/* Geometric Accent Circle behind the image */}
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-72 h-72 md:w-96 md:h-96 rounded-full bg-brand-red select-none z-0 pointer-events-none" />
+            {/* Geometric Accent — Electric Blue Glow behind the image */}
+            <div
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-72 h-72 md:w-96 md:h-96 rounded-full select-none z-0 pointer-events-none"
+              style={{
+                background: "radial-gradient(circle, rgba(37,99,235,0.5) 0%, rgba(59,130,246,0.2) 45%, transparent 72%)",
+                filter: "blur(24px)",
+              }}
+            />
 
             {/* Profile Picture Frame */}
-            <div className="w-[80vw] h-[100vw] sm:w-[50vw] sm:h-[65vw] lg:w-[26vw] lg:h-[35vw] relative z-10 overflow-hidden grayscale contrast-[1.1] hover:grayscale-0 transition-all duration-[1s] shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-brand-border">
+            <div className="w-[80vw] h-[100vw] sm:w-[50vw] sm:h-[65vw] lg:w-[26vw] lg:h-[35vw] relative z-10 overflow-hidden grayscale contrast-[1.1] hover:grayscale-0 transition-all duration-[1s] shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-brand-border" style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.8), 0 0 40px rgba(37,99,235,0.15)' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/sanjai 2.PNG"
@@ -54,7 +60,7 @@ export default function About() {
             
             {/* Section Title */}
             <div className="flex flex-col gap-2">
-              <span className="text-xs md:text-sm tracking-[0.4em] text-brand-red font-semibold uppercase">
+              <span className="text-xs md:text-sm tracking-[0.4em] text-brand-blue font-semibold uppercase">
                 GET TO KNOW ME
               </span>
               <h2 className="font-anton text-6xl md:text-8xl leading-none text-text-white tracking-tight uppercase">
@@ -62,8 +68,8 @@ export default function About() {
               </h2>
             </div>
 
-            {/* Content paragraphs */}
-            <div className="flex flex-col gap-4 text-text-gray text-sm md:text-base leading-relaxed">
+            {/* Content paragraphs (Limited to 550px for high premium reading layout) */}
+            <div className="flex flex-col gap-4 text-text-gray text-sm md:text-base leading-relaxed max-w-[550px]">
               <p>
                 I am <strong className="text-text-white font-semibold">Sanjai K</strong>, an aspiring Full Stack Developer passionate about building scalable, efficient, and user-friendly web applications. I enjoy transforming ideas into real-world digital solutions through modern web technologies and clean development practices.
               </p>
@@ -77,18 +83,18 @@ export default function About() {
 
             {/* Academic Card */}
             <motion.div
-              className="glass-panel p-6 md:p-8 border-l-[3px] border-l-brand-red relative overflow-hidden"
+              className="glass-panel p-6 md:p-8 border-l-[3px] border-l-brand-blue relative overflow-hidden"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-brand-red-glow border border-brand-border text-brand-red rounded">
+                <div className="p-3 bg-brand-blue-glow border border-brand-border-glow text-brand-blue rounded">
                   <GraduationCap size={24} />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <span className="text-[10px] tracking-[0.2em] font-mono text-brand-red uppercase font-semibold">
+                  <span className="text-[10px] tracking-[0.2em] font-mono text-brand-blue uppercase font-semibold">
                     CURRENT EDUCATION
                   </span>
                   <h3 className="font-bebas text-2xl tracking-wide text-text-white">
@@ -100,7 +106,7 @@ export default function About() {
                   <p className="text-xs text-text-muted mt-2">
                     Akshaya College of Engineering and Technology
                   </p>
-                  <p className="text-xs font-mono text-brand-red mt-1">
+                  <p className="text-xs font-mono text-brand-blue mt-1">
                     Expected Graduation: 2028
                   </p>
                 </div>
@@ -119,12 +125,12 @@ export default function About() {
                   transition={{ duration: 0.4, delay: 0.1 * idx }}
                 >
                   <div className="flex justify-between items-center">
-                    <span className="font-anton text-2xl md:text-3xl text-text-white tracking-tight leading-none">
+                    <span className="font-sora text-2xl md:text-3xl text-text-white font-bold tracking-tight leading-none">
                       {stat.value}
                     </span>
                     {stat.icon}
                   </div>
-                  <span className="text-[11px] md:text-xs tracking-wider text-text-gray uppercase font-semibold">
+                  <span className="text-[11px] md:text-xs tracking-wider text-text-gray uppercase font-sora font-semibold">
                     {stat.label}
                   </span>
                 </motion.div>

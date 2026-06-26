@@ -83,12 +83,12 @@ export default function Projects() {
       case "showroom":
         return (
           <div className="w-full h-full bg-bg-charcoal border border-brand-border rounded-lg p-6 flex flex-col justify-between relative overflow-hidden font-mono text-[10px] text-text-gray">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-brand-red opacity-10 blur-2xl rounded-full" />
+            <div className="absolute top-0 right-0 w-24 h-24 rounded-full opacity-20 blur-2xl" style={{ background: 'rgba(37,99,235,0.5)' }} />
             <div className="flex justify-between items-center border-b border-brand-border pb-3">
               <span className="text-text-white font-semibold flex items-center gap-1.5">
-                <Box size={12} className="text-brand-red" /> SHOWROOM_DB.SQL
+                <Box size={12} className="text-brand-blue" /> SHOWROOM_DB.SQL
               </span>
-              <span className="px-2 py-0.5 bg-brand-red-glow text-brand-red border border-brand-border-glow text-[8px]">ACTIVE</span>
+              <span className="px-2 py-0.5 bg-brand-blue-glow text-brand-blue border border-brand-border-glow text-[8px]">ACTIVE</span>
             </div>
             
             {/* Inventory table mockup */}
@@ -101,13 +101,13 @@ export default function Projects() {
               </div>
               <div className="grid grid-cols-4">
                 <span>AMG GT 63</span>
-                <span className="text-brand-red">03</span>
+                <span className="text-brand-blue">03</span>
                 <span>$149,000</span>
                 <span className="text-green-500">AVAILABLE</span>
               </div>
               <div className="grid grid-cols-4">
                 <span>PORSCHE 911</span>
-                <span className="text-brand-red">01</span>
+                <span className="text-brand-blue">01</span>
                 <span>$120,000</span>
                 <span className="text-green-500">AVAILABLE</span>
               </div>
@@ -115,7 +115,7 @@ export default function Projects() {
                 <span>M8 GRAN COUPE</span>
                 <span className="text-text-muted">00</span>
                 <span>$130,000</span>
-                <span className="text-brand-red">ORDERED</span>
+                <span className="text-brand-blue">ORDERED</span>
               </div>
             </div>
 
@@ -128,10 +128,10 @@ export default function Projects() {
       case "hospital":
         return (
           <div className="w-full h-full bg-bg-charcoal border border-brand-border rounded-lg p-6 flex flex-col justify-between relative overflow-hidden font-sans text-xs">
-            <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-brand-red-glow opacity-35 blur-3xl rounded-full" />
+            <div className="absolute top-1/2 left-1/3 w-32 h-32 opacity-25 blur-3xl rounded-full" style={{ background: 'rgba(37,99,235,0.4)' }} />
             <div className="flex justify-between items-center border-b border-brand-border pb-3">
               <span className="text-text-white font-semibold flex items-center gap-1.5">
-                <ShieldCheck size={14} className="text-brand-red" /> PATIENT_PORTAL
+                <ShieldCheck size={14} className="text-brand-blue" /> PATIENT_PORTAL
               </span>
               <span className="text-[10px] font-mono text-text-muted">v1.0.2</span>
             </div>
@@ -143,7 +143,7 @@ export default function Projects() {
                   <div className="font-semibold text-text-white text-xs">Dr. Sarah Connor</div>
                   <div className="text-[9px] text-text-muted font-mono">NEUROLOGY // AVAILABLE</div>
                 </div>
-                <button className="px-3 py-1 bg-brand-red text-white text-[10px] font-mono hover:bg-white hover:text-black transition-colors duration-300">BOOK</button>
+                <button className="px-3 py-1 bg-brand-blue text-white text-[10px] font-mono hover:bg-white hover:text-black transition-colors duration-300">BOOK</button>
               </div>
               <div className="p-3 bg-bg-solid border border-brand-border flex justify-between items-center">
                 <div>
@@ -154,8 +154,8 @@ export default function Projects() {
               </div>
             </div>
 
-            <div className="text-[9px] font-mono text-brand-red flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-brand-red animate-ping" />
+            <div className="text-[9px] font-mono text-brand-blue flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-electric-blue animate-ping" style={{ boxShadow: '0 0 8px rgba(59,130,246,0.8)' }} />
               PORT 3000 // EXECUTING SECURE AUTHENTICATOR
             </div>
           </div>
@@ -163,12 +163,12 @@ export default function Projects() {
       case "fabrication":
         return (
           <div className="w-full h-full bg-bg-charcoal border border-brand-border rounded-lg p-6 flex flex-col justify-between relative overflow-hidden font-mono text-[10px] text-text-gray">
-            <div className="absolute bottom-0 right-0 w-28 h-28 bg-brand-red opacity-15 blur-2xl rounded-full" />
+            <div className="absolute bottom-0 right-0 w-28 h-28 opacity-12 blur-2xl rounded-full" style={{ background: 'rgba(37,99,235,0.45)' }} />
             <div className="flex justify-between items-center border-b border-brand-border pb-3">
               <span className="text-text-white font-semibold flex items-center gap-1.5">
-                <Database size={12} className="text-brand-red" /> WORKFLOW_MAPPING
+                <Database size={12} className="text-brand-blue" /> WORKFLOW_MAPPING
               </span>
-              <span className="text-brand-red text-[8px]">MONGODB CLUSTER</span>
+              <span className="text-brand-blue text-[8px]">MONGODB CLUSTER</span>
             </div>
 
             {/* Workflow steps pipeline mockup */}
@@ -178,15 +178,15 @@ export default function Projects() {
                 <span className="text-green-500 font-bold">100% COMPLETE</span>
               </div>
               <div className="w-full h-1 bg-brand-border">
-                <div className="w-full h-full bg-brand-red" />
+                <div className="w-full h-full bg-brand-blue" />
               </div>
               
               <div className="flex items-center justify-between mt-1">
                 <span>[02] LASER CUTTING & BENDING</span>
-                <span className="text-brand-red font-bold">75% IN PROGRESS</span>
+                <span className="text-brand-blue font-bold">75% IN PROGRESS</span>
               </div>
               <div className="w-full h-1 bg-brand-border">
-                <div className="w-3/4 h-full bg-brand-red" />
+                <div className="w-3/4 h-full bg-brand-blue" />
               </div>
 
               <div className="flex items-center justify-between mt-1">
@@ -194,7 +194,7 @@ export default function Projects() {
                 <span className="text-text-muted font-bold">WAITING</span>
               </div>
               <div className="w-full h-1 bg-brand-border">
-                <div className="w-0 h-full bg-brand-red" />
+                <div className="w-0 h-full bg-brand-blue" />
               </div>
             </div>
 
@@ -207,10 +207,10 @@ export default function Projects() {
       case "steel":
         return (
           <div className="w-full h-full bg-bg-charcoal border border-brand-border rounded-lg p-6 flex flex-col justify-between relative overflow-hidden font-sans text-xs">
-            <div className="absolute top-0 left-0 w-20 h-20 bg-brand-red-glow opacity-30 blur-2xl rounded-full" />
+            <div className="absolute top-0 left-0 w-20 h-20 opacity-20 blur-2xl rounded-full" style={{ background: 'rgba(37,99,235,0.5)' }} />
             <div className="flex justify-between items-center border-b border-brand-border pb-3">
               <span className="text-text-white font-semibold flex items-center gap-1.5">
-                <Layout size={14} className="text-brand-red" /> METAL_SYS_v2
+                <Layout size={14} className="text-brand-blue" /> METAL_SYS_v2
               </span>
               <span className="px-2 py-0.5 bg-white/5 border border-brand-border font-mono text-[9px]">EXPRESS.JS</span>
             </div>
@@ -227,7 +227,7 @@ export default function Projects() {
               </div>
               <div className="p-2 border border-brand-border bg-bg-solid flex justify-between">
                 <span>SUPPLIER: SAIL CORP LTD</span>
-                <span className="text-brand-red">DISPATCHED</span>
+                <span className="text-brand-blue">DISPATCHED</span>
               </div>
             </div>
 
@@ -240,12 +240,12 @@ export default function Projects() {
       case "academy":
         return (
           <div className="w-full h-full bg-bg-charcoal border border-brand-border rounded-lg p-6 flex flex-col justify-between relative overflow-hidden font-sans text-xs">
-            <div className="absolute bottom-0 left-1/3 w-32 h-32 bg-brand-red-glow opacity-25 blur-3xl rounded-full" />
+            <div className="absolute bottom-0 left-1/3 w-32 h-32 opacity-20 blur-3xl rounded-full" style={{ background: 'rgba(37,99,235,0.35)' }} />
             <div className="flex justify-between items-center border-b border-brand-border pb-3">
               <span className="text-text-white font-semibold flex items-center gap-1.5">
                 🎓 ACADEMY_CORE
               </span>
-              <span className="text-[10px] font-mono text-brand-red">MONGODB</span>
+              <span className="text-[10px] font-mono text-brand-blue">MONGODB</span>
             </div>
 
             {/* Course catalog / learning layout */}
@@ -256,7 +256,7 @@ export default function Projects() {
                   <span>92%</span>
                 </div>
                 <div className="w-full h-1 bg-brand-border rounded-full overflow-hidden">
-                  <div className="h-full bg-brand-red" style={{ width: "92%" }} />
+                  <div className="h-full bg-brand-blue" style={{ width: "92%" }} />
                 </div>
               </div>
               <div className="flex flex-col gap-1 p-2 bg-bg-solid border border-brand-border">
@@ -265,7 +265,7 @@ export default function Projects() {
                   <span>45%</span>
                 </div>
                 <div className="w-full h-1 bg-brand-border rounded-full overflow-hidden">
-                  <div className="h-full bg-brand-red" style={{ width: "45%" }} />
+                  <div className="h-full bg-brand-blue" style={{ width: "45%" }} />
                 </div>
               </div>
             </div>
@@ -289,7 +289,7 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Header */}
         <div className="flex flex-col gap-2 mb-20 md:mb-28">
-          <span className="text-xs md:text-sm tracking-[0.4em] text-brand-red font-semibold uppercase">
+          <span className="text-xs md:text-sm tracking-[0.4em] text-brand-blue font-semibold uppercase">
             SELECTED WORKS
           </span>
           <h2 className="font-anton text-6xl md:text-8xl leading-none text-text-white tracking-tight uppercase">
@@ -319,7 +319,7 @@ export default function Projects() {
                 >
                   {/* Project ID Tag */}
                   <div className="flex items-center gap-4">
-                    <span className="font-anton text-4xl md:text-5xl text-outline-red font-bold">
+                    <span className="font-anton text-4xl md:text-5xl text-outline-blue font-bold">
                       PROJECT {project.id}
                     </span>
                     <span className="h-[1px] flex-grow bg-brand-border" />
@@ -330,8 +330,8 @@ export default function Projects() {
                     {project.title}
                   </h3>
 
-                  {/* Project Description */}
-                  <p className="font-sans text-sm md:text-base leading-relaxed text-text-gray">
+                  {/* Project Description (Limited to 550px for high premium reading layout) */}
+                  <p className="font-sans text-sm md:text-base leading-relaxed text-text-gray max-w-[550px]">
                     {project.description}
                   </p>
 
@@ -339,7 +339,7 @@ export default function Projects() {
                   <div className="flex flex-col gap-2 mt-2">
                     {project.features.map((feature) => (
                       <div key={feature} className="flex items-center gap-2.5 text-xs text-text-gray font-semibold">
-                        <CheckCircle size={14} className="text-brand-red flex-shrink-0" />
+                        <CheckCircle size={14} className="text-brand-blue flex-shrink-0" />
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -350,7 +350,7 @@ export default function Projects() {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 bg-bg-charcoal border border-brand-border text-[10px] font-mono text-brand-red tracking-wider"
+                        className="px-2.5 py-1 bg-bg-charcoal border border-brand-border text-[10px] font-mono text-brand-blue tracking-wider"
                       >
                         {tech}
                       </span>
@@ -363,7 +363,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-xs tracking-widest font-bold text-text-white hover:text-brand-red transition-colors duration-300 font-sans uppercase group w-fit"
+                      className="flex items-center gap-2 text-xs tracking-widest font-bold text-text-white hover:text-electric-blue transition-colors duration-300 font-sans uppercase group w-fit"
                     >
                       <span>EXPLORE PROJECT DETAILS</span>
                       <ExternalLink size={14} className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
@@ -381,8 +381,11 @@ export default function Projects() {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.7 }}
                 >
-                  {/* Geometric Red circle background behind mockup */}
-                  <div className="absolute w-56 h-56 rounded-full bg-brand-red opacity-30 select-none blur-2xl z-0 pointer-events-none" />
+                  {/* Electric Blue radial glow behind mockup */}
+                  <div
+                    className="absolute w-56 h-56 rounded-full opacity-25 select-none blur-2xl z-0 pointer-events-none"
+                    style={{ background: 'radial-gradient(circle, rgba(37,99,235,0.55) 0%, rgba(59,130,246,0.2) 50%, transparent 75%)' }}
+                  />
                   
                   {/* Decorative background border block */}
                   <div className="absolute inset-4 border border-dashed border-brand-border opacity-20 pointer-events-none z-0" />

@@ -83,7 +83,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
             </div>
             <div className="overflow-hidden">
               <motion.p
-                className="font-sans text-xs md:text-sm tracking-[0.4em] text-brand-red font-semibold"
+                className="font-space text-xs md:text-sm tracking-[0.4em] text-brand-blue font-bold blue-glow-text"
                 initial={{ y: 40 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -97,14 +97,14 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             {/* Status logs */}
             <div className="flex flex-col gap-2">
-              <div className="h-[2px] w-24 bg-brand-red-glow overflow-hidden">
+              <div className="h-[2px] w-24 overflow-hidden" style={{ background: 'rgba(37,99,235,0.2)' }}>
                 <motion.div 
-                  className="h-full bg-brand-red"
-                  style={{ width: `${progress}%` }}
+                  className="h-full"
+                  style={{ width: `${progress}%`, background: 'linear-gradient(90deg, #1d4ed8, #3B82F6)', boxShadow: '0 0 8px rgba(59,130,246,0.7)' }}
                 />
               </div>
               <div className="text-[10px] md:text-xs font-mono tracking-widest text-text-gray flex items-center gap-2">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-red animate-pulse" />
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-electric-blue animate-pulse" style={{ boxShadow: '0 0 8px rgba(59,130,246,0.8)' }} />
                 {statuses[statusIndex]}
               </div>
             </div>

@@ -53,10 +53,8 @@ export default function Hero() {
     const relY = e.clientY - top;
     const x = (relX - width / 2) / 25;
     const y = (relY - height / 2) / 25;
-    // Clamp parallax x/y to prevent extreme flying when scrolled far down
     setMousePosition({ x: Math.max(-50, Math.min(50, x)), y: Math.max(-50, Math.min(50, y)) });
     setSpotlightPos({ x: (relX / width) * 100, y: (relY / height) * 100 });
-    // Card tilt: max ±8 degrees (clamped)
     const rawTiltX = ((relY - height / 2) / height) * -8;
     const rawTiltY = ((relX - width / 2) / width) * 8;
     setTilt({ 
@@ -87,7 +85,7 @@ export default function Hero() {
     <section
       id="home"
       ref={containerRef}
-      className="animated-gradient relative w-full min-h-screen flex flex-col justify-between overflow-hidden pt-24 pb-12 px-6 md:px-12 z-10"
+      className="animated-gradient relative w-full min-h-screen flex flex-col justify-between overflow-hidden pt-24 pb-12 px-5 sm:px-8 md:px-12 z-10"
     >
       {/* Mouse-follow spotlight */}
       <div
@@ -102,22 +100,23 @@ export default function Hero() {
 
       {/* Large ambient blue radial blobs */}
       <div
-        className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full pointer-events-none opacity-20"
+        className="absolute -top-40 -left-40 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full pointer-events-none opacity-20"
         style={{ background: "radial-gradient(circle, rgba(37,99,235,0.6) 0%, transparent 70%)", filter: "blur(60px)" }}
       />
       <div
-        className="absolute -bottom-20 right-1/3 w-[400px] h-[400px] rounded-full pointer-events-none opacity-15"
+        className="absolute -bottom-20 right-1/3 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] rounded-full pointer-events-none opacity-15"
         style={{ background: "radial-gradient(circle, rgba(59,130,246,0.5) 0%, transparent 70%)", filter: "blur(50px)" }}
       />
 
-      {/* Floating Particles */}
-      {PARTICLES.map((p, i) => (
-        <Particle key={i} {...p} />
-      ))}
+      {/* Floating Particles — hidden on very small screens for perf */}
+      <div className="hidden sm:block">
+        {PARTICLES.map((p, i) => (
+          <Particle key={i} {...p} />
+        ))}
+      </div>
 
-      {/* Hero Visual Assets — Right side */}
-      <div className="absolute right-0 md:right-12 lg:right-16 top-1/2 -translate-y-1/2 w-full md:w-[42vw] h-[60vh] md:h-[80vh] z-10 opacity-40 md:opacity-100 pointer-events-none md:pointer-events-auto flex items-center justify-center">
-
+      {/* Hero Visual Assets — Right side: hidden on mobile, shown on md+ */}
+      <div className="hidden md:flex absolute right-0 md:right-12 lg:right-16 top-1/2 -translate-y-1/2 w-full md:w-[42vw] h-[60vh] md:h-[80vh] z-10 pointer-events-none md:pointer-events-auto items-center justify-center">
         {/* Large gradient halo behind card */}
         <motion.div
           className="absolute inset-0 rounded-full pointer-events-none"
@@ -143,7 +142,7 @@ export default function Hero() {
 
         {/* Glass card with portrait */}
         <motion.div
-          className="glass-card-hero relative w-[85vw] md:w-[34vw] h-[52vh] md:h-[62vh] overflow-hidden pointer-events-auto"
+          className="glass-card-hero relative w-[34vw] h-[62vh] overflow-hidden pointer-events-auto"
           style={{
             y: yImage,
             x: mousePosition.x * 0.25,
@@ -190,9 +189,23 @@ export default function Hero() {
         </motion.div>
       </div>
 
+      {/* Mobile portrait — shown only on mobile as a decorative element */}
+      <div className="md:hidden absolute top-20 right-0 w-32 h-40 sm:w-44 sm:h-56 z-0 opacity-30 pointer-events-none overflow-hidden"
+        style={{ borderRadius: '0 0 0 16px', borderLeft: '1px solid rgba(59,130,246,0.2)', borderBottom: '1px solid rgba(59,130,246,0.2)' }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/port front.jpeg"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover object-top grayscale"
+        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(8,11,18,0.5) 0%, transparent 60%), linear-gradient(to top, rgba(8,11,18,0.6) 0%, transparent 50%)' }} />
+      </div>
+
       {/* Hero Content — Left side */}
       <div className="max-w-7xl mx-auto w-full flex-grow flex flex-col justify-center relative z-20 pointer-events-auto">
-        <div className="max-w-[600px] flex flex-col gap-5 md:gap-6">
+        <div className="w-full md:max-w-[600px] flex flex-col gap-4 md:gap-6">
 
           {/* Available badge */}
           <motion.div
@@ -201,8 +214,8 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-[11px] font-manrope font-600 tracking-wide">
-              <span className="w-2 h-2 rounded-full bg-green-400 pulse-green" />
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-[10px] sm:text-[11px] font-manrope font-600 tracking-wide">
+              <span className="w-2 h-2 rounded-full bg-green-400 pulse-green flex-shrink-0" />
               Available for Internship
             </span>
           </motion.div>
@@ -214,9 +227,9 @@ export default function Hero() {
               variants={textVariants}
               initial="hidden"
               animate="visible"
-              className="text-xs md:text-sm tracking-[0.4em] text-brand-blue font-space font-semibold uppercase flex items-center gap-3 blue-glow-text"
+              className="text-xs md:text-sm tracking-[0.3em] sm:tracking-[0.4em] text-brand-blue font-space font-semibold uppercase flex items-center gap-2 sm:gap-3 blue-glow-text"
             >
-              <span className="inline-block w-8 h-[1px] bg-brand-blue" />
+              <span className="inline-block w-6 sm:w-8 h-[1px] bg-brand-blue flex-shrink-0" />
               HELLO, I&apos;M
             </motion.span>
           </div>
@@ -228,7 +241,7 @@ export default function Hero() {
               variants={textVariants}
               initial="hidden"
               animate="visible"
-              className="font-bebas text-7xl sm:text-8xl md:text-[8rem] lg:text-[10rem] leading-[0.9] font-bold tracking-tight text-text-white uppercase"
+              className="font-bebas text-6xl sm:text-7xl md:text-[8rem] lg:text-[10rem] leading-[0.9] font-bold tracking-tight text-text-white uppercase"
             >
               SANJAI K
             </motion.h1>
@@ -243,7 +256,7 @@ export default function Hero() {
               animate="visible"
             >
               <span
-                className="font-space font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight gradient-text-blue"
+                className="font-space font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight gradient-text-blue"
                 style={{ letterSpacing: "-0.01em" }}
               >
                 Full Stack Developer
@@ -251,7 +264,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Subtitle pills — AI Enthusiast etc. */}
+          {/* Subtitle pills */}
           <motion.div
             custom={3.5}
             variants={textVariants}
@@ -262,69 +275,62 @@ export default function Hero() {
             {["AI Enthusiast", "MERN Stack", "UI Engineer"].map((tag, i) => (
               <span key={tag}>
                 <span className="text-xs font-space font-medium text-electric-blue/80 tracking-wide">{tag}</span>
-                {i < 2 && <span className="text-text-muted mx-2">•</span>}
+                {i < 2 && <span className="text-text-muted mx-1 sm:mx-2">•</span>}
               </span>
             ))}
           </motion.div>
 
-          {/* Description — Inter 400, max-w 550px */}
-          <div className="overflow-hidden" style={{ maxWidth: "550px" }}>
+          {/* Description */}
+          <div className="overflow-hidden">
             <motion.p
               custom={4}
               variants={textVariants}
               initial="hidden"
               animate="visible"
-              className="font-sans text-sm md:text-base leading-[1.85] text-text-gray"
+              className="font-sans text-sm md:text-base leading-[1.85] text-text-gray max-w-[90vw] md:max-w-[550px]"
             >
               Building scalable web applications and modern digital experiences through innovative frontend and backend technologies. Turning ideas into real-world software solutions with clean, performant code.
             </motion.p>
           </div>
 
-          {/* Buttons — Manrope 600 */}
+          {/* Buttons */}
           <motion.div
             custom={5}
             variants={textVariants}
             initial="hidden"
             animate="visible"
-            className="flex flex-wrap gap-4 mt-2"
+            className="flex flex-wrap gap-3 sm:gap-4 mt-2"
           >
-            {/* View Projects — gradient primary */}
+            {/* View Projects */}
             <motion.button
               onClick={handleScrollToProjects}
-              className="btn-primary group flex items-center gap-2.5 px-7 py-3.5 text-white text-sm rounded-lg"
+              className="btn-primary group flex items-center gap-2 sm:gap-2.5 px-5 sm:px-7 py-3 sm:py-3.5 text-white text-sm rounded-lg"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
               <span>View Projects</span>
-              <motion.span
-                className="inline-flex"
-                animate={{ x: 0 }}
-                whileHover={{ x: 4 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              >
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
-              </motion.span>
+              <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
             </motion.button>
 
-            {/* Resume — secondary glass */}
+            {/* Resume */}
             <motion.a
               href="/resume.pdf"
               download
-              className="btn-secondary group flex items-center gap-2.5 px-7 py-3.5 text-text-white text-sm rounded-lg"
+              className="btn-secondary group flex items-center gap-2 sm:gap-2.5 px-5 sm:px-7 py-3 sm:py-3.5 text-text-white text-sm rounded-lg"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
               <span>Download Resume</span>
-              <ArrowDown size={16} className="group-hover:translate-y-0.5 transition-transform duration-300" />
+              <ArrowDown size={15} className="group-hover:translate-y-0.5 transition-transform duration-300 flex-shrink-0" />
             </motion.a>
           </motion.div>
         </div>
       </div>
 
       {/* Footer-like bottom details — Socials, Scroll helper */}
-      <div className="max-w-7xl mx-auto w-full flex justify-between items-center relative z-20 mt-12 border-t border-brand-border pt-6">
+      <div className="max-w-7xl mx-auto w-full flex flex-col sm:flex-row justify-between items-start sm:items-center relative z-20 mt-10 sm:mt-12 border-t border-brand-border pt-5 sm:pt-6 gap-4 sm:gap-0">
         {/* Social Links */}
-        <div className="flex gap-6 items-center">
+        <div className="flex gap-4 sm:gap-6 items-center">
           <motion.a
             href="https://github.com/sanjaikarthik777-hash"
             target="_blank"
@@ -332,7 +338,7 @@ export default function Hero() {
             className="text-text-gray hover:text-electric-blue transition-colors duration-300"
             whileHover={{ scale: 1.15, y: -2 }}
           >
-            <Github size={20} />
+            <Github size={18} />
           </motion.a>
           <motion.a
             href="https://www.linkedin.com/in/sanjai-k-92a133345?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
@@ -341,14 +347,14 @@ export default function Hero() {
             className="text-text-gray hover:text-electric-blue transition-colors duration-300"
             whileHover={{ scale: 1.15, y: -2 }}
           >
-            <Linkedin size={20} />
+            <Linkedin size={18} />
           </motion.a>
           <motion.a
             href="mailto:sanjaikarthik777@gmail.com"
             className="text-text-gray hover:text-electric-blue transition-colors duration-300"
             whileHover={{ scale: 1.15, y: -2 }}
           >
-            <Mail size={20} />
+            <Mail size={18} />
           </motion.a>
           <motion.a
             href="https://www.instagram.com/viv_sanjai"
@@ -357,18 +363,18 @@ export default function Hero() {
             className="text-text-gray hover:text-electric-blue transition-colors duration-300"
             whileHover={{ scale: 1.15, y: -2 }}
           >
-            <Instagram size={20} />
+            <Instagram size={18} />
           </motion.a>
         </div>
 
         {/* Scroll Helper */}
         <motion.button
           onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-          className="flex items-center gap-3 text-xs tracking-[0.2em] font-medium text-text-gray hover:text-electric-blue transition-colors duration-300 focus:outline-none font-space"
+          className="flex items-center gap-2 sm:gap-3 text-xs tracking-[0.15em] sm:tracking-[0.2em] font-medium text-text-gray hover:text-electric-blue transition-colors duration-300 focus:outline-none font-space"
           whileHover={{ y: 4 }}
         >
           <span>SCROLL DOWN</span>
-          <ArrowDown size={14} className="animate-bounce" />
+          <ArrowDown size={13} className="animate-bounce" />
         </motion.button>
       </div>
     </section>

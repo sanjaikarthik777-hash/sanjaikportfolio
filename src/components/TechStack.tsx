@@ -8,27 +8,27 @@ export default function TechStack() {
   const stackCategories = [
     {
       title: "FRONTEND DEVELOPMENT",
-      icon: <Cpu className="text-brand-blue" size={24} />,
+      icon: <Cpu className="text-brand-blue" size={22} />,
       skills: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React.js", "Next.js 15", "Tailwind CSS", "Framer Motion"],
     },
     {
       title: "BACKEND ARCHITECTURE",
-      icon: <Server className="text-brand-blue" size={24} />,
+      icon: <Server className="text-brand-blue" size={22} />,
       skills: ["Node.js", "Express.js", "REST APIs", "JWT Auth", "Mongoose", "Socket.io"],
     },
     {
       title: "DATABASE MANAGEMENT",
-      icon: <Database className="text-brand-blue" size={24} />,
+      icon: <Database className="text-brand-blue" size={22} />,
       skills: ["MySQL", "MongoDB", "PostgreSQL", "Redis"],
     },
     {
       title: "DEVELOPER TOOLS",
-      icon: <Wrench className="text-brand-blue" size={24} />,
+      icon: <Wrench className="text-brand-blue" size={22} />,
       skills: ["Git", "GitHub", "VS Code", "Postman", "npm / pnpm", "Docker", "Figma"],
     },
     {
       title: "DEPLOYMENT & HOSTING",
-      icon: <Globe className="text-brand-blue" size={24} />,
+      icon: <Globe className="text-brand-blue" size={22} />,
       skills: ["Vercel", "Netlify", "Render", "AWS S3", "GitHub Pages"],
     },
   ];
@@ -47,28 +47,28 @@ export default function TechStack() {
   return (
     <section
       id="skills"
-      className="relative w-full min-h-screen bg-bg-solid py-24 md:py-32 px-6 md:px-12 z-20 flex items-center border-t border-brand-border"
+      className="relative w-full bg-bg-solid py-20 sm:py-24 md:py-32 px-5 sm:px-8 md:px-12 z-20 border-t border-brand-border"
     >
       {/* Background grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Header */}
-        <div className="flex flex-col gap-2 mb-16 md:mb-20">
+        <div className="flex flex-col gap-2 mb-12 sm:mb-16 md:mb-20">
           <span className="text-xs md:text-sm tracking-[0.4em] text-brand-blue font-semibold uppercase">
             TECHNICAL REPERTOIRE
           </span>
-          <h2 className="font-anton text-6xl md:text-8xl leading-none text-text-white tracking-tight uppercase">
+          <h2 className="font-anton text-5xl sm:text-6xl md:text-8xl leading-none text-text-white tracking-tight uppercase">
             MY TECH STACK
           </h2>
         </div>
 
-        {/* Stack Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {/* Stack Grid Layout — auto height, no fixed h */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
           {stackCategories.map((category, index) => (
             <motion.div
               key={category.title}
-              className="glow-card relative bg-bg-charcoal p-8 border border-brand-border hover:border-brand-border-glow transition-colors duration-500 overflow-hidden flex flex-col justify-between h-[320px] z-10"
+              className="glow-card relative bg-bg-charcoal p-6 sm:p-8 border border-brand-border hover:border-brand-border-glow transition-colors duration-500 overflow-hidden flex flex-col gap-5 z-10"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -77,25 +77,25 @@ export default function TechStack() {
             >
               {/* Top Row - Category Title & Icon */}
               <div className="relative z-10">
-                <div className="flex justify-between items-start mb-6">
-                  <div className="p-3 bg-brand-blue-glow border border-brand-border rounded">
+                <div className="flex justify-between items-start mb-5">
+                  <div className="p-2.5 sm:p-3 bg-brand-blue-glow border border-brand-border rounded">
                     {category.icon}
                   </div>
                   <span className="font-mono text-[9px] text-text-muted tracking-[0.2em] font-semibold">
                     [ 0{index + 1} / STACK ]
                   </span>
                 </div>
-                <h3 className="font-bebas text-2xl tracking-wide text-text-white mb-4">
+                <h3 className="font-bebas text-xl sm:text-2xl tracking-wide text-text-white">
                   {category.title}
                 </h3>
               </div>
 
               {/* Skills Chips Container */}
-              <div className="flex flex-wrap gap-2.5 relative z-10 mt-auto">
+              <div className="flex flex-wrap gap-2 relative z-10">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 bg-bg-solid border border-brand-border text-xs text-text-gray font-mono hover:text-brand-blue hover:border-brand-border-glow transition-all duration-300"
+                    className="px-2.5 py-1 bg-bg-solid border border-brand-border text-[11px] sm:text-xs text-text-gray font-mono hover:text-brand-blue hover:border-brand-border-glow transition-all duration-300"
                   >
                     {skill}
                   </span>

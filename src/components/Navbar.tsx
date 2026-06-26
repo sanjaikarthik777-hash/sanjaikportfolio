@@ -62,7 +62,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 1 }}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 flex justify-between items-center">
           {/* Logo / Brand Name */}
           <button
             onClick={() => scrollToSection("home")}
@@ -130,7 +130,7 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 z-50 bg-bg-solid flex flex-col justify-between p-8"
+            className="fixed inset-0 z-50 bg-bg-solid flex flex-col justify-between p-6 sm:p-8"
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}

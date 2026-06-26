@@ -56,7 +56,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed inset-0 z-[9999] flex flex-col justify-between bg-bg-solid p-8 md:p-16 select-none"
+          className="fixed inset-0 z-[9999] flex flex-col justify-between bg-bg-solid p-6 sm:p-8 md:p-16 select-none overflow-hidden"
           initial={{ opacity: 1 }}
           exit={{ 
             y: "-100%", 
@@ -64,7 +64,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
           }}
         >
           {/* Top Panel - Branding */}
-          <div className="flex justify-between items-center text-xs tracking-[0.3em] text-text-muted">
+          <div className="flex justify-between items-center text-[9px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] text-text-muted">
             <div>SANJAI K PORTFOLIO</div>
             <div>EDITION ©2025</div>
           </div>
@@ -73,7 +73,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
           <div className="my-auto flex flex-col items-start gap-4">
             <div className="overflow-hidden">
               <motion.h1 
-                className="font-bebas text-6xl md:text-9xl font-bold tracking-tight text-text-white"
+                className="font-bebas text-5xl sm:text-6xl md:text-9xl font-bold tracking-tight text-text-white"
                 initial={{ y: 150 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -83,7 +83,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
             </div>
             <div className="overflow-hidden">
               <motion.p
-                className="font-space text-xs md:text-sm tracking-[0.4em] text-brand-blue font-bold blue-glow-text"
+                className="font-space text-[10px] sm:text-xs md:text-sm tracking-[0.3em] sm:tracking-[0.4em] text-brand-blue font-bold blue-glow-text"
                 initial={{ y: 40 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -94,7 +94,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
           </div>
 
           {/* Bottom Panel - Loading Info */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+          <div className="flex flex-row justify-between items-end gap-4">
             {/* Status logs */}
             <div className="flex flex-col gap-2">
               <div className="h-[2px] w-24 overflow-hidden" style={{ background: 'rgba(37,99,235,0.2)' }}>
@@ -110,7 +110,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
             </div>
 
             {/* Huge numeric ticker */}
-            <div className="font-anton text-8xl md:text-[12rem] leading-none text-outline-white relative -bottom-4 md:-bottom-12 select-none select-none select-none select-none select-none tracking-tighter">
+            <div className="font-anton text-6xl sm:text-8xl md:text-[12rem] leading-none text-outline-white relative -bottom-2 sm:-bottom-4 md:-bottom-12 select-none tracking-tighter">
               {String(progress).padStart(3, "0")}
             </div>
           </div>

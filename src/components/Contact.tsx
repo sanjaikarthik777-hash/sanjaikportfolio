@@ -25,82 +25,82 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative w-full min-h-screen bg-bg-solid py-24 md:py-32 px-6 md:px-12 z-20 flex items-center border-t border-brand-border"
+      className="relative w-full bg-bg-solid py-20 sm:py-24 md:py-32 px-5 sm:px-8 md:px-12 z-20 border-t border-brand-border"
     >
       {/* Background Dot Accent */}
       <div className="absolute inset-0 bg-dot-pattern opacity-20 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-16 lg:gap-24 items-start">
           
           {/* Left Column: Editorial Typography & Links (lg:col-span-5) */}
-          <div className="lg:col-span-5 flex flex-col gap-8">
+          <div className="lg:col-span-5 flex flex-col gap-6 sm:gap-8">
             <div className="flex flex-col gap-2">
               <span className="text-xs md:text-sm tracking-[0.4em] text-brand-blue font-semibold uppercase">
                 GET IN TOUCH
               </span>
-              <h2 className="font-anton text-6xl md:text-8xl leading-none text-text-white tracking-tight uppercase">
-                LET'S BUILD<br />SOMETHING<br />AMAZING
+              <h2 className="font-anton text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none text-text-white tracking-tight uppercase">
+                LET&apos;S BUILD<br />SOMETHING<br />AMAZING
               </h2>
             </div>
 
             <p className="font-sans text-sm md:text-base leading-relaxed text-text-gray max-w-md">
-              I'm open to internships, freelance opportunities, collaborations, and exciting development projects. Have an idea? Get in touch and let's create a digital solution together.
+              I&apos;m open to internships, freelance opportunities, collaborations, and exciting development projects. Have an idea? Get in touch and let&apos;s create a digital solution together.
             </p>
 
             {/* Quick Contact Info */}
-            <div className="flex flex-col gap-4 mt-4 font-mono text-xs tracking-wider">
-              <div className="flex items-center gap-3">
-                <span className="text-brand-blue font-bold">EMAIL:</span>
-                <a href="mailto:sanjaikarthik777@gmail.com" className="text-text-gray hover:text-white transition-colors duration-300">
+            <div className="flex flex-col gap-3 sm:gap-4 font-mono text-xs tracking-wider">
+              <div className="flex items-start sm:items-center gap-2 sm:gap-3">
+                <span className="text-brand-blue font-bold flex-shrink-0">EMAIL:</span>
+                <a href="mailto:sanjaikarthik777@gmail.com" className="text-text-gray hover:text-white transition-colors duration-300 break-all sm:break-normal">
                   sanjaikarthik777@gmail.com
                 </a>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="text-brand-blue font-bold">PHONE:</span>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <span className="text-brand-blue font-bold flex-shrink-0">PHONE:</span>
                 <a href="tel:+919943567691" className="text-text-gray hover:text-white transition-colors duration-300">
                   +91 99435 67691
                 </a>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="text-brand-blue font-bold">LOC:</span>
+              <div className="flex items-start sm:items-center gap-2 sm:gap-3">
+                <span className="text-brand-blue font-bold flex-shrink-0">LOC:</span>
                 <span className="text-text-gray">Coimbatore, Tamil Nadu, India</span>
               </div>
             </div>
 
             {/* Social Links Grid */}
-            <div className="flex gap-4 mt-2">
+            <div className="flex gap-3 sm:gap-4 mt-1 sm:mt-2">
               <motion.a
                 href="https://github.com/sanjaikarthik777-hash"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-bg-charcoal border border-brand-border text-text-gray hover:text-electric-blue hover:border-brand-border-glow transition-all duration-300"
+                className="p-2.5 sm:p-3 bg-bg-charcoal border border-brand-border text-text-gray hover:text-electric-blue hover:border-brand-border-glow transition-all duration-300"
                 whileHover={{ y: -4 }}
               >
-                <Github size={18} />
+                <Github size={17} />
               </motion.a>
               <motion.a
                 href="https://www.linkedin.com/in/sanjai-k-92a133345?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-bg-charcoal border border-brand-border text-text-gray hover:text-electric-blue hover:border-brand-border-glow transition-all duration-300"
+                className="p-2.5 sm:p-3 bg-bg-charcoal border border-brand-border text-text-gray hover:text-electric-blue hover:border-brand-border-glow transition-all duration-300"
                 whileHover={{ y: -4 }}
               >
-                <Linkedin size={18} />
+                <Linkedin size={17} />
               </motion.a>
               <motion.a
                 href="mailto:sanjaikarthik777@gmail.com"
-                className="p-3 bg-bg-charcoal border border-brand-border text-text-gray hover:text-electric-blue hover:border-brand-border-glow transition-all duration-300"
+                className="p-2.5 sm:p-3 bg-bg-charcoal border border-brand-border text-text-gray hover:text-electric-blue hover:border-brand-border-glow transition-all duration-300"
                 whileHover={{ y: -4 }}
               >
-                <Mail size={18} />
+                <Mail size={17} />
               </motion.a>
             </div>
           </div>
 
           {/* Right Column: Contact Form (lg:col-span-7) */}
           <motion.div
-            className="lg:col-span-7 w-full bg-bg-charcoal p-8 md:p-12 border border-brand-border shadow-2xl relative"
+            className="lg:col-span-7 w-full bg-bg-charcoal p-6 sm:p-8 md:p-12 border border-brand-border shadow-2xl relative"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -111,15 +111,15 @@ export default function Contact() {
 
             {submitted ? (
               <motion.div
-                className="flex flex-col items-center justify-center text-center py-16 gap-4"
+                className="flex flex-col items-center justify-center text-center py-10 sm:py-16 gap-4"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
               >
                 <div className="p-4 bg-brand-blue-glow border border-brand-border-glow text-brand-blue rounded-full">
-                  <CheckCircle2 size={40} className="animate-bounce" />
+                  <CheckCircle2 size={36} className="animate-bounce" />
                 </div>
-                <h3 className="font-bebas text-3xl text-text-white tracking-wide">
+                <h3 className="font-bebas text-2xl sm:text-3xl text-text-white tracking-wide">
                   MESSAGE SENT SUCCESSFULLY!
                 </h3>
                 <p className="text-xs text-text-gray font-mono max-w-sm">
@@ -127,27 +127,27 @@ export default function Contact() {
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-6 px-6 py-3 border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-mono text-[10px] tracking-widest transition-all duration-300 blue-glow"
+                  className="mt-4 sm:mt-6 px-5 sm:px-6 py-2.5 sm:py-3 border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-mono text-[10px] tracking-widest transition-all duration-300 blue-glow"
                 >
                   SEND ANOTHER MESSAGE
                 </button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6 sm:gap-8">
                 
                 {/* Form Heading */}
-                <h3 className="font-bebas text-2xl tracking-wide text-text-white border-b border-brand-border pb-4 uppercase">
+                <h3 className="font-bebas text-xl sm:text-2xl tracking-wide text-text-white border-b border-brand-border pb-3 sm:pb-4 uppercase">
                   DROP A MESSAGE
                 </h3>
 
                 {/* Name Input */}
                 <div className="flex flex-col gap-2 relative">
-                  <label htmlFor="name" className="text-[10px] font-mono tracking-widest text-text-gray uppercase font-semibold">
+                  <label htmlFor="contact-name" className="text-[10px] font-mono tracking-widest text-text-gray uppercase font-semibold">
                     YOUR NAME
                   </label>
                   <input
                     type="text"
-                    id="name"
+                    id="contact-name"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -158,12 +158,12 @@ export default function Contact() {
 
                 {/* Email Input */}
                 <div className="flex flex-col gap-2 relative">
-                  <label htmlFor="email" className="text-[10px] font-mono tracking-widest text-text-gray uppercase font-semibold">
+                  <label htmlFor="contact-email" className="text-[10px] font-mono tracking-widest text-text-gray uppercase font-semibold">
                     YOUR EMAIL
                   </label>
                   <input
                     type="email"
-                    id="email"
+                    id="contact-email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -174,11 +174,11 @@ export default function Contact() {
 
                 {/* Message Textarea */}
                 <div className="flex flex-col gap-2 relative">
-                  <label htmlFor="message" className="text-[10px] font-mono tracking-widest text-text-gray uppercase font-semibold">
+                  <label htmlFor="contact-message" className="text-[10px] font-mono tracking-widest text-text-gray uppercase font-semibold">
                     YOUR MESSAGE
                   </label>
                   <textarea
-                    id="message"
+                    id="contact-message"
                     required
                     rows={4}
                     value={formData.message}
@@ -192,7 +192,7 @@ export default function Contact() {
                 <motion.button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 font-manrope font-semibold text-sm text-white rounded-lg flex items-center justify-center gap-2 transition-all duration-300"
+                  className="w-full py-3.5 sm:py-4 font-manrope font-semibold text-sm text-white rounded-lg flex items-center justify-center gap-2 transition-all duration-300"
                   style={{ background: 'linear-gradient(135deg, #2563EB 0%, #3B82F6 100%)', boxShadow: '0 4px 15px rgba(37,99,235,0.4)' }}
                   whileHover={{ scale: 1.01, y: -2, boxShadow: '0 8px 25px rgba(37,99,235,0.55)' } as never}
                   whileTap={{ scale: 0.99 } as never}
